@@ -41,7 +41,7 @@ function App() {
         <p class="hero__text">Escaparate en línea para recoger ideas a través de la tecnología</p>
         <a class="button--link" href="./">Ver proyectos</a>
       </section>
-      
+
     </header>
     
     <main class="main">
@@ -79,6 +79,8 @@ function App() {
           </div>
         </article>
       </section>
+
+      
       <form class="addForm">
         <h2 class="title">Información</h2>
         <fieldset class="addForm__group">
