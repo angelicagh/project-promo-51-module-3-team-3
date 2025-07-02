@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Routes, Route } from "react-router";
 import { useState } from "react";
+import ProjectPreview from "./components/ProjectPreview";
 
 function App() {
   const [projectData, setProjectData] = useState({
@@ -25,6 +26,7 @@ function App() {
       </Routes>
 
       <Header></Header>
+      <ProjectPreview data={projectData} />
       <Footer></Footer>
     </>
   );
