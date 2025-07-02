@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import { Routes, Route } from "react-router";
 import { useState } from "react";
 import ProjectPreview from "./components/ProjectPreview";
+import Form from "./components/Form/Form";
 
 function App() {
   const [projectData, setProjectData] = useState({
@@ -27,6 +28,7 @@ function App() {
 
       <Header></Header>
       <ProjectPreview data={projectData} />
+      <Form pprojectData={projectData} psetprojectData={setProjectData}/>
       <Footer></Footer>
     </>
   );

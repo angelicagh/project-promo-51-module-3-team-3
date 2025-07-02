@@ -4,7 +4,7 @@ function Header() {
   
   return (
     <>
-      <p class="header">Soy el header</p>
+      <p className="header">Soy el header</p>
    
 {/*        <header class="header">
       <a class="header__brand" href="./" title="Haz click para volver a la página inicial">
