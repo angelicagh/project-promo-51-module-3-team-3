@@ -1,22 +1,29 @@
 
+// paso de App a Form la variable de estado y la funcion que la actualiza
+
 function Form({pprojectData, psetprojectData}) {
 
+  /* con el mismo evento recojo todos los cambios de os inputs y actualizo la variable de estado
+    1. const id: guardo el id sobre el que se hacen cambios
+    2. const value : guardo los datos del valor que escribe el usuario
+    3. const newProjectData: creo una nueva constante para guardar los datos nuevos que va introduciendo el usuario (en un objeto)
+    4. uso el spread operator, que quiere decir "deja lo que tienes en projectData y añade lo nuevo" (lo nuevo son los datos que va introduciendo el usuario)
+    5. actualiza la variable de estado original con los datos nuevos */
+
   const handleChange = (ev) => {
-    console.log("id :", ev.target.id);
-    console.log("type :", ev.target.type);
-    console.log(ev.target.value);
-    const id = ev.target.id;
-    const value = ev.target.value;
+    const id = ev.target.id; 
+    const value = ev.target.value; 
     const newProjectData = {
-      ...pprojectData, [id]: value
+      ...pprojectData, [id]: value //spread operator
     }
-    psetprojectData(newProjectData)
+    psetprojectData(newProjectData) 
   }
 
 
 
   return (
     <>
+    {/* todos los campos del formulario van asociados al mismo evento */}
       <form className="addForm">
         <h2 className="title">Información</h2>
         <fieldset className="addForm__group">
