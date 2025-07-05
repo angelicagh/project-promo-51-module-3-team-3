@@ -8,7 +8,7 @@ function ProjectPreview({ data }) {
 
           <div className="card__author">
             <div className="card__authorPhoto"></div>
-            <p cclassName="card__job">
+            <p className="card__job">
               {data.job || "Full stack Developer"} 
             </p>
             <h3 className="card__name">{data.author || "Emmelie Bjôrklund"}</h3>

@@ -4,10 +4,11 @@ import Footer from "./components/Footer";
 import { Routes, Route } from "react-router";
 import { useState } from "react";
 import ProjectPreview from "./components/ProjectPreview";
-import Form from "./components/Form/Form";
+import Form from "./components/Form";
+
 
 function App() {
-  const [projectData, setProjectData] = useState({
+  const [projectData, setProjectData] = useState( {
     name: "",
     slogan: "",
     repo: "",
@@ -20,18 +21,26 @@ function App() {
     image: "",
   });
 
+
+  
+  
+
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route></Route>
-      </Routes>
+      </Routes> */}
 
       <Header></Header>
       <ProjectPreview data={projectData} />
-      <Form pprojectData={projectData} psetprojectData={setProjectData}/>
+      <Form pprojectData={projectData} psetProjectData={setProjectData} />
       <Footer></Footer>
+
+      
+      {/* <Profile avatar={avatar} /> */}
     </>
   );
 }
+
 
 export default App;
