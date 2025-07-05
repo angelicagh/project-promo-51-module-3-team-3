@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"; //por que salen tres puntitos?
 import GetAvatar from "./GetAvatar";
 
+
 // paso de App a Form la variable de estado y la funcion que la actualiza
 
 function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
@@ -122,14 +123,14 @@ function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
           <input className="addForm__hidden" type="file" name="image" id="image"/> */}
 
           <GetAvatar
-            avatar={pprojectData.image}
+            avatar={pprojectData.image || defaultImage}
             updateAvatar={(image) =>
               psetProjectData({ ...pprojectData, image })
             }
             text="Subir foto del proyecto"
           />
           <GetAvatar
-            avatar={pprojectData.photo}
+            avatar={pprojectData.photo || defaultPhoto}
             updateAvatar={(photo) =>
               psetProjectData({ ...pprojectData, photo })
             }
