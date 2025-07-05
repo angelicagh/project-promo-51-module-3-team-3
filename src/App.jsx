@@ -9,7 +9,9 @@ import defaultImage from "./images/ebook-example.jpg";
 import defaultPhoto from "./images/avatar.webp";
 
 function App() {
-  const [projectData, setProjectData] = useState({
+  localStorage.getItem("projectData") 
+  const localStorageData = localStorage.getItem("projectData");
+  let dataFinal = {
     name: "Elegant Workspace",
     slogan: "Diseños Exclusivos",
     repo: "#",
@@ -21,8 +23,15 @@ function App() {
     job: "Full stack Developer",
     photo: defaultPhoto,
     image: defaultImage,
-  });
+  }
 
+  if (localStorageData !== null) {
+    const parsedData = JSON.parse(localStorageData);
+    dataFinal =parsedData;
+    // const [projectData, setProjectData] = useState(parsedData);
+}
+  const [projectData, setProjectData] = useState(dataFinal);
+  
   /* 
   const [avatar, setAvatar] = useState("")
   const updateAvatar = (avatar) => {

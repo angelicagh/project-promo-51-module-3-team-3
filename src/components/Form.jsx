@@ -1,7 +1,6 @@
 import PropTypes from "prop-types"; //por que salen tres puntitos?
 import GetAvatar from "./GetAvatar";
 
-
 // paso de App a Form la variable de estado y la funcion que la actualiza
 
 function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
@@ -24,6 +23,8 @@ function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
       ...pprojectData,
       [id]: value, //spread operator
     };
+    localStorage.setItem("projectData", JSON.stringify(newProjectData));
+
     psetProjectData(newProjectData);
   };
 
@@ -43,6 +44,7 @@ function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
             name="name"
             id="name"
             placeholder="Nombre del proyecto"
+            value={pprojectData.name}
             required
           />
           <input
@@ -52,6 +54,7 @@ function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
             name="slogan"
             id="slogan"
             placeholder="Slogan"
+            value={pprojectData.slogan}
             required
           />
           <div className="addForm__2col">
@@ -62,6 +65,7 @@ function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
               name="repo"
               id="repo"
               placeholder="Repositorio"
+              value={pprojectData.repo}
               required
             />
             <input
@@ -71,6 +75,7 @@ function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
               name="demo"
               id="demo"
               placeholder="Demo"
+              value={pprojectData.demo}
               required
             />
           </div>
@@ -81,6 +86,7 @@ function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
             name="technologies"
             id="technologies"
             placeholder="Tecnologías"
+            value={pprojectData.technologies}
             required
           />
           <textarea
@@ -90,6 +96,7 @@ function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
             name="description"
             id="description"
             placeholder="Descripción"
+            value={pprojectData.description}
             rows="5"
             required
           ></textarea>
@@ -104,6 +111,7 @@ function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
             name="author"
             id="author"
             placeholder="Nombre"
+            value={pprojectData.author}
             required
           />
           <input
@@ -113,6 +121,7 @@ function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
             name="job"
             id="job"
             placeholder="Trabajo"
+            value={pprojectData.job}
             required
           />
         </fieldset>
