@@ -6,7 +6,7 @@ import React from "react";
 
 
 
-function GetAvatar({avatar/* =defaultAvatar */, updateAvatar, text='Get avatar!'}) {
+function GetAvatar({avatar /* =defaultAvatar */, updateAvatar, text='Get avatar!'}) {
   // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen
   // esto es un manejador de ficheros
   const fr = new FileReader();
@@ -76,8 +76,8 @@ function GetAvatar({avatar/* =defaultAvatar */, updateAvatar, text='Get avatar!'
 
       <div
         className="get-avatar__preview"
-        /* style={{ backgroundImage: `url(${avatar})` }} */
-        style={{ backgroundImage: 'url(https://placecats.com/neo/300/200)' }}
+        style={{ backgroundImage: `url(${avatar})` }} 
+        
       ></div>
     </div>
   );

@@ -4,7 +4,7 @@ import GetAvatar from "./GetAvatar";
 
 // paso de App a Form la variable de estado y la funcion que la actualiza
 
-function Form({pprojectData, psetProjectData, pavatar, pupdateAvatar}) {
+function Form({pprojectData, psetProjectData, /* pavatar, pupdateAvatar */}) {
 
 /*   const [avatar, setAvatar] = useState("")
   const updateAvatar = (avatar) => {
@@ -56,7 +56,8 @@ function Form({pprojectData, psetProjectData, pavatar, pupdateAvatar}) {
           {/* <label htmlFor="image" className="button">Subir foto del proyecto</label>
           <input className="addForm__hidden" type="file" name="image" id="image"/> */}
           
-          <GetAvatar pavatar pupdateAvatar text="Subir foto del proyecto"/>
+          <GetAvatar avatar={pprojectData.image}
+          updateAvatar={(image) => psetProjectData({ ...pprojectData, image })} text="Subir foto del proyecto"/>
 
           {/* <label htmlFor="photo" className="button">Subir foto de la autora</label>
           <input className="addForm__hidden" type="file" name="photo" id="photo"/>
