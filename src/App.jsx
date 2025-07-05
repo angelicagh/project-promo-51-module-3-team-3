@@ -19,8 +19,8 @@ function App() {
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione",
     author: "Emmelie Bjôrklund",
     job: "Full stack Developer",
-    photo: {defaultPhoto},
-    image: {defaultImage},
+    photo: defaultPhoto,
+    image: defaultImage,
   });
 
   /* 
