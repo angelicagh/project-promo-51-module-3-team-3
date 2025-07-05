@@ -76,7 +76,8 @@ function GetAvatar({avatar/* =defaultAvatar */, updateAvatar, text='Get avatar!'
 
       <div
         className="get-avatar__preview"
-        style={{ backgroundImage: `url(${avatar})` }}
+        /* style={{ backgroundImage: `url(${avatar})` }} */
+        style={{ backgroundImage: 'url(https://placecats.com/neo/300/200)' }}
       ></div>
     </div>
   );

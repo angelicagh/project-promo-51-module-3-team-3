@@ -1,15 +1,16 @@
 import PropTypes from "prop-types";//por que salen tres puntitos?
 import GetAvatar from "./GetAvatar";
-import { useState } from "react";
+
 
 // paso de App a Form la variable de estado y la funcion que la actualiza
 
-function Form({pprojectData, psetProjectData}) {
+function Form({pprojectData, psetProjectData, pavatar, pupdateAvatar}) {
 
-  const [avatar, setAvatar] = useState("")
+/*   const [avatar, setAvatar] = useState("")
   const updateAvatar = (avatar) => {
+    console.log("nuevo avatar", avatar)
     setAvatar(avatar);
-  }
+  } */
 
   /* con el mismo evento recojo todos los cambios de los inputs y actualizo la variable de estado
     1. const id: guardo el id sobre el que se hacen cambios
@@ -55,7 +56,7 @@ function Form({pprojectData, psetProjectData}) {
           {/* <label htmlFor="image" className="button">Subir foto del proyecto</label>
           <input className="addForm__hidden" type="file" name="image" id="image"/> */}
           
-          <GetAvatar avatar={avatar} updateAvatar={updateAvatar} text="Subir foto del proyecto"/>
+          <GetAvatar pavatar pupdateAvatar text="Subir foto del proyecto"/>
 
           {/* <label htmlFor="photo" className="button">Subir foto de la autora</label>
           <input className="addForm__hidden" type="file" name="photo" id="photo"/>

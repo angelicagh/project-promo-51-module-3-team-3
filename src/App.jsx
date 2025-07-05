@@ -21,6 +21,12 @@ function App() {
     image: "",
   });
 
+  const [avatar, setAvatar] = useState("")
+  const updateAvatar = (avatar) => {
+    console.log("nuevo avatar", avatar)
+    setAvatar(avatar);
+  }
+
 
   
   
@@ -33,14 +39,15 @@ function App() {
 
       <Header></Header>
       <ProjectPreview data={projectData} />
-      <Form pprojectData={projectData} psetProjectData={setProjectData} />
+      <Form pprojectData={projectData} psetProjectData={setProjectData} pavatar={avatar} pupdateAvatar={updateAvatar} />
       <Footer></Footer>
 
       
       {/* <Profile avatar={avatar} /> */}
     </>
   );
-}
+  }
 
 
-export default App;
+
+export default App

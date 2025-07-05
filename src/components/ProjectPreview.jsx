@@ -2,7 +2,7 @@ function ProjectPreview({ data }) {
   return (
     <>
                 <section className="preview">
-        <div className="projectImage"></div>
+        <div className="projectImage" style={{ backgroundImage: 'url(https://placecats.com/neo/300/200)' }}></div>
         <article className="card">
           <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
 
