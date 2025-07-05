@@ -1,14 +1,13 @@
-import '../styles/components/footer.scss'
+import "../styles/components/footer.scss";
 
 function Footer() {
-  
   return (
-    <>  
-      {/* <footer class="footer">
-      <img class="logoSponsor" src="./images/adalab.png" alt="Logo Adalab">
-      </footer>  */}
-      </>
-  )
+    <>
+      <footer className="footer">
+        <p className="footer__text">© 2025 Proyecto Adalab</p>
+      </footer>
+    </>
+  );
 }
 
-export default Footer
+export default Footer;

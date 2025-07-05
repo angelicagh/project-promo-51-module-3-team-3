@@ -1,15 +1,16 @@
 import "./styles/App.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { Routes, Route } from "react-router";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import ProjectPreview from "./components/ProjectPreview";
 import Form from "./components/Form";
 import defaultImage from "./images/ebook-example.jpg";
 import defaultPhoto from "./images/avatar.webp";
+import LandingPage from "./components/Landing";
 
 function App() {
-  localStorage.getItem("projectData") 
+  localStorage.getItem("projectData");
   const localStorageData = localStorage.getItem("projectData");
   let dataFinal = {
     name: "Elegant Workspace",
@@ -23,15 +24,15 @@ function App() {
     job: "Full stack Developer",
     photo: defaultPhoto,
     image: defaultImage,
-  }
+  };
 
   if (localStorageData !== null) {
     const parsedData = JSON.parse(localStorageData);
-    dataFinal =parsedData;
+    dataFinal = parsedData;
     // const [projectData, setProjectData] = useState(parsedData);
-}
+  }
   const [projectData, setProjectData] = useState(dataFinal);
-  
+
   /* 
   const [avatar, setAvatar] = useState("")
   const updateAvatar = (avatar) => {
@@ -42,21 +43,23 @@ function App() {
 
   return (
     <>
-      {/* <Routes>
-        <Route></Route>
-      </Routes> */}
-
-      <Header></Header>
-      <ProjectPreview data={projectData} />
-      <Form
-        pprojectData={projectData}
-        psetProjectData={
-          setProjectData
-        } /* pavatar={avatar} pupdateAvatar={updateAvatar} */
-      />
-      <Footer></Footer>
-
-      {/* <Profile avatar={avatar} /> */}
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route
+          path="/app"
+          element={
+            <>
+              <Header />
+              <ProjectPreview data={projectData} />
+              <Form
+                pprojectData={projectData}
+                psetProjectData={setProjectData}
+              />
+            </>
+          }
+        />
+      </Routes>
+      <Footer />
     </>
   );
 }
