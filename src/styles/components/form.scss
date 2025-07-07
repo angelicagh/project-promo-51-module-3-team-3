@@ -1,6 +1,6 @@
 .addForm {
   margin: 0 auto;
-  padding: 30px 40px;
+  padding: 70px 30px;
   max-width: 600px;
   background-color: #211e2e;
   background-image: radial-gradient(
@@ -53,7 +53,7 @@
   }
 
   &__group {
-    margin-bottom: 20px;
+    margin-bottom: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,6 +82,11 @@
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 25px;
+    background-color: #8176af;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
   }
 
   &__hidden {
@@ -102,7 +107,7 @@
   }
 }
 
-// Footer opcional (si está en la misma vista)
+// Footer opcional 
 .footer {
   display: flex;
   justify-content: center;
@@ -111,7 +116,7 @@
 }
 
 
-// MEDIA QUERIES
+
 
 // Tablets
 @media (max-width: 768px) {

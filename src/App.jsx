@@ -50,11 +50,13 @@ function App() {
           element={
             <>
               <Header />
+              <div className="container_app" style={{ display : "flex" }}>
               <ProjectPreview data={projectData} />
               <Form
                 pprojectData={projectData}
                 psetProjectData={setProjectData}
               />
+              </div>
             </>
           }
         />
