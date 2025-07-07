@@ -1,38 +1,86 @@
 .header {
-  color: rgb(81, 216, 126);
-  font-weight: bold;
-  font-size: 2rem;
-  text-align: center;
-  justify-content: center;
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #302c42;
 
-  &__landing-btn {
-    background-color: #226868;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 20px;
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.2rem;
 
-    &:hover {
-      background-color: #174949;
-      cursor: pointer;
+    .title {
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    &__text {
+      color: #333;
+      font-weight: 300; 
+      font-size: 1.2rem;
+      max-width: 600px;
+      padding: 0 20px;
+    }
+
+    .header__landing-btn {
+      background-color: #8176af;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #06fdd4;
+        cursor: pointer;
+      }
+    }
+
+    .projectImage {
+        width: 70%;
+        max-width: 600px;
+        height: 300px;
+        background-image: url("https://reformasbcnhogar.es/wp-content/uploads/1643821043_954_Japandi-style-la-decoracion-de-2022.jpg");
+        background-size: cover;        
+        background-position: center;   
+        background-repeat: no-repeat;
+        border-radius: 15px;
+        margin: 0 auto 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);;
     }
   }
 }
 
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 10px;
 
-  &__text {
-    color: #333;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
+    .hero {
+      .title {
+        font-size: 2rem;
+      }
+
+      &__text {
+        font-size: 1rem;
+        padding: 0 15px;
+      }
+
+      .header__landing-btn {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+      }
+
+      .projectImage {
+        height: 200px;
+        max-width: 90%;
+      }
+    }
   }
 }
