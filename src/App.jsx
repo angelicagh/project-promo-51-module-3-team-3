@@ -13,15 +13,14 @@ function App() {
   localStorage.getItem("projectData");
   const localStorageData = localStorage.getItem("projectData");
   let dataFinal = {
-    name: "Elegant Workspace",
-    slogan: "Diseños Exclusivos",
-    repo: "#",
-    demo: "#",
-    technologies: "React JS - HTML - CSS",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione",
-    author: "Emmelie Bjôrklund",
-    job: "Full stack Developer",
+    name: "",
+    slogan: "",
+    repo: "",
+    demo: "",
+    technologies: "",
+    description: "",
+    author: "",
+    job: "",
     photo: defaultPhoto,
     image: defaultImage,
   };

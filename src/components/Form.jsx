@@ -132,14 +132,14 @@ function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
           <input className="addForm__hidden" type="file" name="image" id="image"/> */}
 
           <GetAvatar
-            avatar={pprojectData.image || defaultImage}
+            avatar={pprojectData.image}
             updateAvatar={(image) =>
               psetProjectData({ ...pprojectData, image })
             }
             text="Subir foto del proyecto"
           />
           <GetAvatar
-            avatar={pprojectData.photo || defaultPhoto}
+            avatar={pprojectData.photo}
             updateAvatar={(photo) =>
               psetProjectData({ ...pprojectData, photo })
             }
