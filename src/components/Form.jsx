@@ -1,36 +1,54 @@
-import PropTypes from "prop-types"; //por que salen tres puntitos?
+import PropTypes from "prop-types";
 import GetAvatar from "./GetAvatar";
 
-// paso de App a Form la variable de estado y la funcion que la actualiza
-
-function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
-  /*   const [avatar, setAvatar] = useState("")
-  const updateAvatar = (avatar) => {
-    console.log("nuevo avatar", avatar)
-    setAvatar(avatar);
-  } */
-
-  /* con el mismo evento recojo todos los cambios de los inputs y actualizo la variable de estado
-    1. const id: guardo el id sobre el que se hacen cambios
-    2. const value : guardo los datos del valor que escribe el usuario
-    3. const newProjectData: creo una nueva constante para guardar los datos nuevos que va introduciendo el usuario (en un objeto)
-    4. uso el spread operator, que quiere decir "deja lo que tienes en projectData y añade lo nuevo" (lo nuevo son los datos que va introduciendo el usuario)
-    5. actualiza la variable de estado original con los datos nuevos */
+function Form({ pprojectData, psetProjectData }) {
   const handleChange = (ev) => {
     const id = ev.target.id;
     const value = ev.target.value;
     const newProjectData = {
       ...pprojectData,
-      [id]: value, //spread operator
+      [id]: value,
     };
     localStorage.setItem("projectData", JSON.stringify(newProjectData));
-
     psetProjectData(newProjectData);
+  };
+
+  const handleClick = (ev) => {
+    ev.preventDefault();
+    console.log("click!");
+
+    fetch("https://dev.adalab.es/api/projectCard", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: pprojectData.name,
+        slogan: pprojectData.slogan,
+        repo: pprojectData.repo,
+        demo: pprojectData.demo,
+        technologies: pprojectData.technologies,
+        desc: pprojectData.description,
+        author: pprojectData.author,
+        job: pprojectData.job,
+        photo: "https://placecats.com/neo/300/200",
+        image: "https://placecats.com/neo/300/200",
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Respuesta completa:", data);
+        if (data.success) {
+          console.log("URL generada:", data.cardURL);
+        } else {
+          console.log("Algo ha fallado");
+        }
+      })
+      .catch((error) => console.error("Error en el fetch:", error));
   };
 
   return (
     <>
-      {/* todos los campos del formulario van asociados al mismo evento */}
       <form className="addForm">
         <h2 className="title">Información</h2>
         <fieldset className="addForm__group">
@@ -92,7 +110,6 @@ function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
           <textarea
             onChange={handleChange}
             className="addForm__input"
-            type="text"
             name="description"
             id="description"
             placeholder="Descripción"
@@ -126,11 +143,7 @@ function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
           />
         </fieldset>
 
-        {/*  BOTONES */}
         <fieldset className="addForm__group--upload">
-          {/* <label htmlFor="image" className="button">Subir foto del proyecto</label>
-          <input className="addForm__hidden" type="file" name="image" id="image"/> */}
-
           <GetAvatar
             avatar={pprojectData.image}
             updateAvatar={(image) =>
@@ -145,19 +158,14 @@ function Form({ pprojectData, psetProjectData /* pavatar, pupdateAvatar */ }) {
             }
             text="Subir foto de la autora"
           />
-
-          {/* <label htmlFor="photo" className="button">Subir foto de la autora</label>
-          <input className="addForm__hidden" type="file" name="photo" id="photo"/>
-          <button className="button--large">Crear proyecto</button> */}
         </fieldset>
+
+        <button onClick={handleClick}>Crear proyecto</button>
       </form>
     </>
   );
 }
 
-//esto no termino de entenderlo
-//prop-types: validar las props que recibe un componente
-//no funciona e investigando me dice copilot que la vesion 19 de react no devuelve los errores de proptypes, asi que no sirven de nada vaya, la solucion que me da es volver a la version 18
 Form.propTypes = {
   pprojectData: PropTypes.shape({
     name: PropTypes.string.isRequired,
