@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import ProjectPreview from "./components/ProjectPreview";
 import Form from "./components/Form";
-import defaultImage from "./images/ebook-example.jpg";
+import defaultImage from "./images/house.jpg";
 import defaultPhoto from "./images/avatar.webp";
 import LandingPage from "./components/Landing";
 
@@ -50,12 +50,12 @@ function App() {
           element={
             <>
               <Header />
-              <div className="container_app" style={{ display : "flex" }}>
-              <ProjectPreview data={projectData} />
-              <Form
-                pprojectData={projectData}
-                psetProjectData={setProjectData}
-              />
+              <div className="container_app" style={{ display: "flex" }}>
+                <ProjectPreview data={projectData} />
+                <Form
+                  pprojectData={projectData}
+                  psetProjectData={setProjectData}
+                />
               </div>
             </>
           }

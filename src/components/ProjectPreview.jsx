@@ -5,7 +5,7 @@ function ProjectPreview({ data }) {
         <div
           className="projectImage"
           style={{
-            backgroundImage: `url("https://reformasbcnhogar.es/wp-content/uploads/1643821043_954_Japandi-style-la-decoracion-de-2022.jpg")`,
+            backgroundImage: `url(${data.image})`,
           }}
         ></div>
         <article className="card">
