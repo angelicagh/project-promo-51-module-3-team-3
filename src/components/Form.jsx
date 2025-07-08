@@ -142,25 +142,31 @@ function Form({ pprojectData, psetProjectData }) {
             required
           />
         </fieldset>
+        <div className="form-buttons-container">
+          <fieldset className="addForm__group--uploadphoto">
+            <GetAvatar
+              avatar={pprojectData.image}
+              updateAvatar={(image) =>
+                psetProjectData({ ...pprojectData, image })
+              }
+              text="Subir foto del proyecto"
+            />
+          </fieldset>
 
-        <fieldset className="addForm__group--upload">
-          <GetAvatar
-            avatar={pprojectData.image}
-            updateAvatar={(image) =>
-              psetProjectData({ ...pprojectData, image })
-            }
-            text="Subir foto del proyecto"
-          />
-          <GetAvatar
-            avatar={pprojectData.photo}
-            updateAvatar={(photo) =>
-              psetProjectData({ ...pprojectData, photo })
-            }
-            text="Subir foto de la autora"
-          />
-        </fieldset>
+          <fieldset className="addForm__group--uploadauthor">
+            <GetAvatar
+              avatar={pprojectData.photo}
+              updateAvatar={(photo) =>
+                psetProjectData({ ...pprojectData, photo })
+              }
+              text="Subir foto de la autora"
+            />
+          </fieldset>
+        </div>
 
-        <button onClick={handleClick}>Crear proyecto</button>
+        <button className="form-project-btn" onClick={handleClick}>
+          Crear proyecto
+        </button>
       </form>
     </>
   );
