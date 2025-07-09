@@ -1,7 +1,7 @@
 .header {
   align-items: center;
   padding: 1%;
-  background-color: #302c42;
+  background-color: #e8d6c8;
 
   .hero {
     display: flex;
@@ -11,7 +11,7 @@
     justify-content: space-between;
 
     .title {
-      color: rgb(255, 255, 255);
+      color: #1d1d1d;
       font-weight: bold;
       font-size: 2rem;
       margin-bottom: 10px;
@@ -20,8 +20,8 @@
 }
 
 .header__landing-btn {
-  background-color: #835dec;
-  color: white;
+  background-color: #d98259;
+  color: #ffffff;
   padding: 10px 20px;
   border-radius: 20px;
   text-decoration: none;
@@ -30,8 +30,9 @@
 }
 
 .header__landing-btn:hover {
-  background-color: #000000;
+  background-color: #a4b48c;
   cursor: pointer;
+  transform: scale(1.1); 
 }
 
 @media (max-width: 768px) {
