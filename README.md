@@ -1,28 +1,42 @@
-## :construction: Proyectos Molones - In Progress
 
-![Badge en Desarollo](https://img.shields.io/badge/STATUS-IN%20PROGRESS-green)
+# 🖼️ Gestor de Proyectos - In progress :construction: 
+
+Una aplicación web desarrollada con React que permite **subir tus proyectos** y visualizarlos como si fueran parte de un **escaparate digital** 📸. Ideal para mantener un resumen creativo y ordenado de tus trabajos.
 
 
-## IN Progress
-Tenemos un primer intento de maquetación de otra empresa que finalmente no pudo con la complejidad del proyecto.
+## 🚀 Características principales
 
-Dado el diseño de la página, empezaron a maquetar la página del formulario para crear una tarjeta. El diseño no está completo (faltan por ajustar detalles y el responsive). Espero que os ayude a avanzar en el proyecto.
+- **Landing page** con un botón para comenzar
 
-## Descripción
+- **Formulario** para introducir los datos del proyecto y del autor
 
-En este proyecto vamos a realizar una aplicación web que nos permite crear un escaparates de proyectos que nos molen mucho. En la página web podemos:
--  Introducir los datos del proyecto y obtener una vista detallada del mismo.
--  Ver una lista de proyectos que ya hemos creado.
+- **Previsualización en tiempo real** mediante una tarjeta generada automáticamente
 
-### :hammer: Diseño
+- Comunicación con servidor usando **fetch() y método POST** para enviar los datos
 
-El diseño lo podéis inspeccionar en este proyecto de [zeplin](https://zpl.io/DlrJNMl). En este diseño debéis tener en cuenta:
+- **Galería visual** tipo escaparate para explorar todos los proyectos subidos (next step)
 
-- El diseño de la web puede ser adaptado por cada equipo, asi que podéis ser tan creativas como quieran.
-- Dentro del Zeplin encontrarán el diseño para movil y el Desktop/tablet, este último es el mismo para los dos dispositivos.
-- Las pantallas dentro del Zeplin son tanto para el proyecto del módulo 3 y el módulo 4.
-- En el diseño no hay una página de inicio que luego te lleve a la página del formulario para crear un proyecto, pero sois libres de crearla si queréis.
+- **Diseño responsive**
 
-### :woman_technologist: HTML y CSS
 
-Este repositorio contiene el HTML y CSS de la página del formulario para crear el proyecto. Lo que ¡Vaya! el equipo que estaba trabajando no lo ha completado y este se ha quedado a medias. Vamos a tener que darle una vuelta al código. **Si vuestro equipo decide utilizar este HTML de base deberá heredar el código y completar el diseño.**
+## 🛠️ Tecnologías utilizadas
+
+- ⚛️ **React**
+- 🔗 **React Router**
+- 🎨 **CSS**
+- 🌐 **Fetch API con el método POST**
+
+
+## 📦 Instalación y uso
+
+#### 1. Clonar el repositorio
+`git clone` https://github.com/angelicagh/project-promo-51-module-3-team-3
+
+#### 2. Instalar dependencias
+`npm install`
+
+#### 3. Ejecutar la app 
+`npm run dev`
+
+
+
