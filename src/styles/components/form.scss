@@ -7,8 +7,8 @@
 .addForm {
   padding: 20px;
   margin-left: 1%;
-  width: 50%;
-  height: 60%;
+  min-height: 400px; 
+  height: auto;
   box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.25);
   border: solid 1px rgba(0, 0, 0, 0);
   border-radius: 20px;
@@ -23,7 +23,6 @@
 .addForm .title {
   font: var(--font-title-biggest);
   margin-block: 18px;
-
 }
 
 .addForm .addForm__title {
@@ -107,7 +106,6 @@
 
 .addForm .addForm__group {
   margin-bottom: 20px;
-  
 }
 
 .addForm .addForm__input {
@@ -353,6 +351,10 @@
   background-image: url("../images/icons/github.svg");
 }
 
+.form-message {
+  margin-top: 14px;
+}
+
 // Tablets
 @media (max-width: 768px) {
   .addForm {
@@ -385,5 +387,11 @@
       font-size: 1rem;
       padding: 10px 16px;
     }
+  }
+
+  .form-message {
+    word-break: break-word;
+    text-align: center;
+    padding: 0 10px;
   }
 }

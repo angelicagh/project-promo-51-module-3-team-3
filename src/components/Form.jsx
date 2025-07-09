@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
 import GetAvatar from "./GetAvatar";
+import { useState } from "react";
 
 function Form({ pprojectData, psetProjectData }) {
+  const [message, setMessage] = useState("");
+
   const handleChange = (ev) => {
     const id = ev.target.id;
     const value = ev.target.value;
@@ -15,7 +18,7 @@ function Form({ pprojectData, psetProjectData }) {
 
   const handleClick = (ev) => {
     ev.preventDefault();
-    console.log("click!");
+    setMessage("Creando proyecto...");
 
     fetch("https://dev.adalab.es/api/projectCard", {
       method: "POST",
@@ -39,7 +42,7 @@ function Form({ pprojectData, psetProjectData }) {
       .then((data) => {
         console.log("Respuesta completa:", data);
         if (data.success) {
-          console.log("URL generada:", data.cardURL);
+          setMessage(`Proyecto creado en: ${data.cardURL}`);
         } else {
           console.log("Algo ha fallado");
         }
@@ -167,6 +170,7 @@ function Form({ pprojectData, psetProjectData }) {
         <button className="form-project-btn" onClick={handleClick}>
           Crear proyecto
         </button>
+        {message && <p className="form-message">{message}</p>}
       </form>
     </>
   );
