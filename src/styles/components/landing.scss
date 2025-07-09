@@ -3,14 +3,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #e8d6c8;
-  height: 96vh;
+  background: linear-gradient(135deg, #e8d6c8, #f5ebe0);
+  min-height: 96vh;
+  animation: fadeIn 1s ease-out;
+  padding: 40px 20px; 
+    justify-content: center;
 
   &__title {
     font-size: 2.5rem;
-    color: #1d1d1d;
+    color: #a3856e;
     margin-bottom: 20px;
     text-align: center;
+    animation: slideDown 1s ease-out;
   }
 
   &__subtitle {
@@ -18,14 +22,17 @@
     padding: 10px 20px;
     border-radius: 20px;
     text-decoration: none;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1.2rem;
     text-align: center;
     max-width: 600px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+    animation-delay: 0.5s;
   }
 
   &__button {
-   background-color: #d98259;
+    background-color: #d98259;
     color: #ffffff;
     padding: 10px 20px;
     border-radius: 20px;
@@ -33,18 +40,87 @@
     font-weight: bold;
     margin-top: 20px;
     font-size: 1rem;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
     &:hover {
-    background-color: #a4b48c;
-    cursor: pointer;
-    transform: scale(1.1); 
-     }
-
-
+      background-color: #a4b48c;
+      cursor: pointer;
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
   }
 }
 
-/*  Responsive para pantallas menores a 768px */
+/* Sparkle animation */
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #ffffff 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.8;
+  transform: scale(1);
+  animation: sparkle-animation 1s forwards;
+}
+
+@keyframes sparkle-animation {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(4);
+  }
+}
+
+/* Animaciones keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
+  .landing {
+    height: auto;
+    padding: 60px 40px;
+
+    &__title {
+      font-size: 2.2rem;
+    }
+
+    &__subtitle {
+      font-size: 1.1rem;
+      max-width: 80%;
+    }
+
+    &__button {
+      font-size: 0.95rem;
+      padding: 9px 18px;
+    }
+  }
+}
+
+/* Móviles (≤768px) */
 @media (max-width: 768px) {
   .landing {
     height: auto;
@@ -57,11 +133,34 @@
     &__subtitle {
       font-size: 1rem;
       padding: 10px;
+      max-width: 100%;
     }
 
     &__button {
       font-size: 0.9rem;
       padding: 8px 16px;
+    }
+  }
+}
+
+/* Móviles pequeños (≤480px) */
+@media (max-width: 480px) {
+  .landing {
+    height: auto;
+    padding: 30px 15px;
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__subtitle {
+      font-size: 0.95rem;
+      padding: 8px;
+    }
+
+    &__button {
+      font-size: 0.85rem;
+      padding: 8px 14px;
     }
   }
 }

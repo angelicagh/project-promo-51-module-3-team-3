@@ -11,7 +11,7 @@
     justify-content: space-between;
 
     .title {
-      color: #1d1d1d;
+      color: #a3856e;
       font-weight: bold;
       font-size: 2rem;
       margin-bottom: 10px;
@@ -27,12 +27,13 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .header__landing-btn:hover {
   background-color: #a4b48c;
   cursor: pointer;
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
@@ -40,18 +41,23 @@
     padding: 20px 10px;
 
     .hero {
+      flex-direction: column; /* cambia a columna */
+      align-items: center; /* centra los elementos */
+
       .title {
         font-size: 2rem;
-      }
-
-      &__text {
-        font-size: 1rem;
-        padding: 0 15px;
+        margin-bottom: 15px; /* añade margen inferior para separar del botón */
       }
 
       .header__landing-btn {
         font-size: 0.9rem;
         padding: 8px 20px;
+        margin-top: 10px; /* espacio superior al botón */
+      }
+
+      &__text {
+        font-size: 1rem;
+        padding: 0 15px;
       }
 
       .projectImage {
