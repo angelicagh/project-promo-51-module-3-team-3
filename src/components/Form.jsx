@@ -5,6 +5,7 @@ import { useState } from "react";
 function Form({ pprojectData, psetProjectData }) {
   const [message, setMessage] = useState("");
   const [cardURL, setCardURL] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (ev) => {
     const id = ev.target.id;
@@ -45,8 +46,11 @@ function Form({ pprojectData, psetProjectData }) {
         if (data.success) {
           setMessage("Tu proyecto ha sido creado con éxito");
           setCardURL(data.cardURL);
+          setErrorMessage("");
         } else {
-          console.log("Algo ha fallado");
+          setErrorMessage("Por favor, completa todos los campos.");
+          setMessage("");
+          setCardURL("");
         }
       })
       .catch((error) => console.error("Error en el fetch:", error));
@@ -175,11 +179,12 @@ function Form({ pprojectData, psetProjectData }) {
         {message && <p className="form-message">{message}</p>}
         {cardURL && (
           <p className="form-url">
-            <a className="form-url" href={cardURL} target="_blank" rel="noopener noreferrer">
+            <a href={cardURL} target="_blank" rel="noopener noreferrer">
               Ver proyecto creado
             </a>
           </p>
         )}
+        {errorMessage && <p className="form-error">{errorMessage}</p>}
       </form>
     </>
   );
