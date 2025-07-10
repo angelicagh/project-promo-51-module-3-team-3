@@ -4,6 +4,7 @@ import { useState } from "react";
 
 function Form({ pprojectData, psetProjectData }) {
   const [message, setMessage] = useState("");
+  const [cardURL, setCardURL] = useState("");
 
   const handleChange = (ev) => {
     const id = ev.target.id;
@@ -42,7 +43,8 @@ function Form({ pprojectData, psetProjectData }) {
       .then((data) => {
         console.log("Respuesta completa:", data);
         if (data.success) {
-          setMessage(`Proyecto creado en: ${data.cardURL}`);
+          setMessage("Tu proyecto ha sido creado con éxito");
+          setCardURL(data.cardURL);
         } else {
           console.log("Algo ha fallado");
         }
@@ -171,6 +173,13 @@ function Form({ pprojectData, psetProjectData }) {
           Crear proyecto
         </button>
         {message && <p className="form-message">{message}</p>}
+        {cardURL && (
+          <p className="form-url">
+            <a href={cardURL} target="_blank" rel="noopener noreferrer">
+              Ver proyecto creado
+            </a>
+          </p>
+        )}
       </form>
     </>
   );
