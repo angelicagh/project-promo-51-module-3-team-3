@@ -179,7 +179,7 @@ function Form({ pprojectData, psetProjectData }) {
         {message && <p className="form-message">{message}</p>}
         {cardURL && (
           <p className="form-url">
-            <a href={cardURL} target="_blank" rel="noopener noreferrer">
+            <a className="form-url" href={cardURL} target="_blank" rel="noopener noreferrer">
               Ver proyecto creado
             </a>
           </p>
