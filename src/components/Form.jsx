@@ -34,7 +34,7 @@ function Form({ pprojectData, psetProjectData }) {
         desc: pprojectData.description,
         author: pprojectData.author,
         job: pprojectData.job,
-        photo: "https://placecats.com/neo/300/200",
+        photo: "https://placecats.com/neo_banana/300/200",
         image: "https://placecats.com/neo/300/200",
       }),
     })
