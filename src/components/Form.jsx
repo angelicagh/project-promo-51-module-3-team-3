@@ -36,8 +36,8 @@ function Form({ pprojectData, psetProjectData }) {
         desc: pprojectData.description,
         author: pprojectData.author,
         job: pprojectData.job,
-        photo: "https://placecats.com/neo_banana/300/200",
-        image: "https://placecats.com/neo/300/200",
+        photo: pprojectData.photo,
+        image: pprojectData.image,
       }),
     })
       .then((res) => res.json())
@@ -155,9 +155,11 @@ function Form({ pprojectData, psetProjectData }) {
           <fieldset className="addForm__group--uploadphoto">
             <GetAvatar
               avatar={pprojectData.image}
-              updateAvatar={(image) =>
-                psetProjectData({ ...pprojectData, image })
-              }
+              updateAvatar={(image) => {
+                const updated = { ...pprojectData, image };
+                psetProjectData(updated);
+                localStorage.setItem("projectData", JSON.stringify(updated));
+              }}
               text="Subir foto del proyecto"
             />
           </fieldset>
@@ -165,9 +167,11 @@ function Form({ pprojectData, psetProjectData }) {
           <fieldset className="addForm__group--uploadauthor">
             <GetAvatar
               avatar={pprojectData.photo}
-              updateAvatar={(photo) =>
-                psetProjectData({ ...pprojectData, photo })
-              }
+              updateAvatar={(photo) => {
+                const updated = { ...pprojectData, photo };
+                psetProjectData(updated);
+                localStorage.setItem("projectData", JSON.stringify(updated));
+              }}
               text="Subir foto de la autora"
             />
           </fieldset>
@@ -179,7 +183,12 @@ function Form({ pprojectData, psetProjectData }) {
         {message && <p className="form-message">{message}</p>}
         {cardURL && (
           <p className="form-url">
-            <a className="form-url" href={cardURL} target="_blank" rel="noopener noreferrer">
+            <a
+              className="form-url"
+              href={cardURL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver proyecto creado
             </a>
           </p>
