@@ -9,7 +9,10 @@ function LandingPage() {
         Documenta, organiza y comparte tu stack con el mundo.
       </p>
       <Link to="/app" className="landing__button">
-        Comenzar
+        Sube tu proyecto
+      </Link>
+            <Link to="/app" className="landing__projects">
+        Ver todos los proyectos
       </Link>
     </main>
   );

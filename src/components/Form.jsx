@@ -21,8 +21,8 @@ function Form({ pprojectData, psetProjectData }) {
   const handleClick = (ev) => {
     ev.preventDefault();
     setMessage("Creando proyecto...");
-
-    fetch("https://dev.adalab.es/api/projectCard", {
+    console.log("Enviando datos del proyecto:", pprojectData);
+    fetch("http://localhost:4000/project/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
