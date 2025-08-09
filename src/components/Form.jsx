@@ -22,6 +22,7 @@ function Form({ pprojectData, psetProjectData }) {
     ev.preventDefault();
     setMessage("Creando proyecto...");
     console.log("Enviando datos del proyecto:", pprojectData);
+
     fetch("http://localhost:4000/project/add", {
       method: "POST",
       headers: {
@@ -45,7 +46,21 @@ function Form({ pprojectData, psetProjectData }) {
         console.log("Respuesta completa:", data);
         if (data.success) {
           setMessage("Tu proyecto ha sido creado con éxito");
-          setCardURL(data.cardURL);
+
+          // Obtenemos el id que devuelve el backend
+          const id = data.project_id;
+
+          if (!id) {
+            setErrorMessage(
+              "No se recibió el id del proyecto en la respuesta."
+            );
+            setCardURL("");
+            return;
+          }
+
+          // Construimos la URL del detalle
+          const url = `http://localhost:4000/project/detail/${id}`;
+          setCardURL(url);
           setErrorMessage("");
         } else {
           setErrorMessage("Por favor, completa todos los campos.");
@@ -151,6 +166,7 @@ function Form({ pprojectData, psetProjectData }) {
             required
           />
         </fieldset>
+
         <div className="form-buttons-container">
           <fieldset className="addForm__group--uploadphoto">
             <GetAvatar
@@ -180,7 +196,9 @@ function Form({ pprojectData, psetProjectData }) {
         <button className="form-project-btn" onClick={handleClick}>
           Crear proyecto
         </button>
+
         {message && <p className="form-message">{message}</p>}
+
         {cardURL && (
           <p className="form-url">
             <a
@@ -193,6 +211,7 @@ function Form({ pprojectData, psetProjectData }) {
             </a>
           </p>
         )}
+
         {errorMessage && <p className="form-error">{errorMessage}</p>}
       </form>
     </>

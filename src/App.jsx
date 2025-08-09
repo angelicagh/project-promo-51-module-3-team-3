@@ -60,7 +60,7 @@ function App() {
             </>
           }
         />
-        <Route path="/projects" element={<ProjectList />} />
+        <Route path="/project/list" element={<ProjectList />} />
       </Routes>
       <Footer />
     </>

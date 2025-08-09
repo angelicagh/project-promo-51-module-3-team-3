@@ -11,7 +11,7 @@ function LandingPage() {
       <Link to="/app" className="landing__button">
         Sube tu proyecto
       </Link>
-      <Link to="/projects" className="landing__projects">
+      <Link to="/project/list" className="landing__projects">
         Ver todos los proyectos
       </Link>
     </main>
