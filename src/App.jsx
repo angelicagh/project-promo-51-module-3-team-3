@@ -8,6 +8,7 @@ import Form from "./components/Form";
 import defaultImage from "./images/house.jpg";
 import defaultPhoto from "./images/avatar.webp";
 import LandingPage from "./components/Landing";
+import ProjectList from "./components/ProjectList";
 
 function App() {
   localStorage.getItem("projectData");
@@ -59,6 +60,7 @@ function App() {
             </>
           }
         />
+        <Route path="/projects" element={<ProjectList />} />
       </Routes>
       <Footer />
     </>
