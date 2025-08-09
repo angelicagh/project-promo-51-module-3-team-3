@@ -1,3 +1,4 @@
+import '../styles/components/project-list.scss'
 import { useEffect, useState } from "react";
 
 function ProjectList() {
